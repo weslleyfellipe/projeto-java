@@ -1,8 +1,8 @@
 package ecommerce.entities;
 
-import conta.util.Cores;
 
-public class Produto {
+
+public abstract class Produto {
 
 	private int id;
 	private String nome;

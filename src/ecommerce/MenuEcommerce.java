@@ -3,7 +3,9 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import conta.util.Cores;
+import ecommerce.entities.Laptops;
 import ecommerce.entities.Produto;
+import ecommerce.entities.Smartphones;
 import produtocontroller.ProdutoController;
 public class MenuEcommerce {
 
@@ -19,19 +21,19 @@ public static Scanner leia = new Scanner(System.in);
        int opcao;
        ProdutoController produto = new ProdutoController();
        
-       Produto p1 = new Produto(1, "Notebook", 2500, 20);
+       Produto p1 = new Laptops(1, "Notebook", 2500, 20);
        produto.adicionarItem(p1);
       
-       Produto p2 = new Produto(2, "Smartphone", 2500, 20);
+       Produto p2 = new Smartphones(2, "Smartphone", 2500, 20);
        produto.adicionarItem(p2);
       
-       Produto p3 = new Produto(3, "Smart Tv", 3000, 15);
+       Produto p3 = new Smartphones(3, "Smart Tv", 3000, 15);
        produto.adicionarItem(p3);
        
-       Produto p4 = new Produto(4, "Fones de Ouvido", 100.00, 15);
+       Produto p4 = new Laptops(4, "Fones de Ouvido", 100.00, 15);
        produto.adicionarItem(p4);
       
-       Produto p5 = new Produto(5, "Monitores", 1000.00, 10);
+       Produto p5 = new Laptops(5, "Monitores", 1000.00, 10);
        produto.adicionarItem(p5);
       
      
