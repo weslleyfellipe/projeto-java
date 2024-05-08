@@ -1,18 +1,40 @@
 package ecommerce;
 import java.io.IOException;
 import java.util.Scanner;
-
 import conta.util.Cores;
-
-
+import ecommerce.entities.Produto;
+import produtocontroller.ProdutoController;
 public class MenuEcommerce {
 
 public static Scanner leia = new Scanner(System.in);
-	
+		
+
+
+
+
+
 	public static void main(String[] args) {
 		
        int opcao;
        
+       ProdutoController produto = new ProdutoController();
+       
+       Produto p1 = new Produto(1, "Notebook", 2500, 20);
+       produto.adicionarItem(p1);
+      
+       Produto p2 = new Produto(2, "Smartphone", 2500, 20);
+       produto.adicionarItem(p2);
+      
+       Produto p3 = new Produto(3, "Smart Tv", 3000, 15);
+       produto.adicionarItem(p3);
+       
+       Produto p4 = new Produto(4, "Fones de Ouvido", 100.00, 15);
+       produto.adicionarItem(p4);
+      
+       Produto p5 = new Produto(5, "Monitores", 1000.00, 10);
+       produto.adicionarItem(p5);
+       
+     
        
        
      
@@ -21,7 +43,7 @@ public static Scanner leia = new Scanner(System.in);
            System.out.println("                                         ");
            System.out.println("           1- Ver catálogo               ");
            System.out.println("           2- Adicionar item ao carrinho ");
-           System.out.println("           3- Ver carrinho               ");
+           System.out.println("           3- Comprar Produto            ");
            System.out.println("           4- Finalizar compra           ");
            System.out.println("           5- Sair                       ");
            System.out.println("                                         ");
@@ -31,9 +53,16 @@ public static Scanner leia = new Scanner(System.in);
 
            switch (opcao) {
                case 1:
-                  
+               produto.listarProdutos();
+              
+   				keypress();
                    break;
+                  
+                  
                case 2:
+            	   System.out.println("Digite o Id do Produto : ");
+            	   int idProduto =leia.nextInt();
+            	   produto.adicionarCarrinho(idProduto);
                   
                    break;
                case 3:
