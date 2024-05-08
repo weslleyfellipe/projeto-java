@@ -55,7 +55,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return   "\n" + id + " - " + nome + "  R$ : " + preco + " \n Quantidades : " + quantidade ;
+		return   "\n" + id + " - " + nome + "  R$ : " + preco + " \n Quantidade em Estoque : " + quantidade ;
 		
 	}
 	

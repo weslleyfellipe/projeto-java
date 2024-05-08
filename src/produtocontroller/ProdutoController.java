@@ -15,6 +15,7 @@ public class ProdutoController implements ProdutoRepository {
 		   for (Produto item : produtos ) {
 	        if (item.getId() ==id )  {
 	         carrinho.add(item);    
+	         item.setQuantidade(item.getQuantidade()-1);
 	        	
 	        }
 		   
@@ -22,7 +23,9 @@ public class ProdutoController implements ProdutoRepository {
 		   System.out.println("Produto Adicionado com Sucesso ! ");
 		   for ( Produto item : carrinho ) {
 			   System.out.println(item);
+			  
 		   }
+		   
 	    }
 
 	   public void finalizarCompra() {
