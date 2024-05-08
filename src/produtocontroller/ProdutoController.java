@@ -1,8 +1,6 @@
 package produtocontroller;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
 import ecommerce.entities.Produto;
 import produtorepository.ProdutoRepository;
 
@@ -28,6 +26,8 @@ public class ProdutoController implements ProdutoRepository {
 	    }
 
 	   public void finalizarCompra() {
+		   carrinho.removeAll(carrinho);
+		   System.out.println("Obrigado pela Compra volte Sempre ! ");
 	       
 			
 	    }
@@ -35,7 +35,7 @@ public class ProdutoController implements ProdutoRepository {
 	public void listarProdutos() {
 		
         
-        System.out.println("Produtos da Loja");
+        System.out.println("Essa é a Lista de Produtos : \n");
         for (Produto item : produtos ) {
         	System.out.println( item);
         }

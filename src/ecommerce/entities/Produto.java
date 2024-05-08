@@ -1,5 +1,7 @@
 package ecommerce.entities;
 
+import conta.util.Cores;
+
 public class Produto {
 
 	private int id;
@@ -53,7 +55,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return  id + " - " + nome + " | R$ : " + preco + " | Quantidades : " + quantidade ;
+		return   "\n" + id + " - " + nome + "  R$ : " + preco + " \n Quantidades : " + quantidade ;
 		
 	}
 	

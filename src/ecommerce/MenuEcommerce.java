@@ -1,5 +1,6 @@
 package ecommerce;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import conta.util.Cores;
 import ecommerce.entities.Produto;
@@ -16,7 +17,6 @@ public static Scanner leia = new Scanner(System.in);
 	public static void main(String[] args) {
 		
        int opcao;
-       
        ProdutoController produto = new ProdutoController();
        
        Produto p1 = new Produto(1, "Notebook", 2500, 20);
@@ -33,24 +33,24 @@ public static Scanner leia = new Scanner(System.in);
       
        Produto p5 = new Produto(5, "Monitores", 1000.00, 10);
        produto.adicionarItem(p5);
-       
+      
      
-       
+	 
        
      
        do {
-           System.out.println(Cores.TEXT_GREEN+ Cores.ANSI_BLACK_BACKGROUND + "Bem-vindo à Loja Eletrônica!             ");
+           System.out.println(Cores. TEXT_BLACK_BOLD+ Cores.ANSI_WHITE_BACKGROUND + "Bem-vindo à Loja Eletrônica!             ");
            System.out.println("                                         ");
            System.out.println("           1- Ver catálogo               ");
            System.out.println("           2- Adicionar item ao carrinho ");
-           System.out.println("           3- Comprar Produto            ");
-           System.out.println("           4- Finalizar compra           ");
-           System.out.println("           5- Sair                       ");
+           System.out.println("           3- Finalizar compra           ");
+           System.out.println("           4- Sair                       ");
            System.out.println("                                         ");
-           System.out.print("             Escolha uma opção:          " + Cores.TEXT_RESET);
+           System.out.println("             Escolha uma opção:          " + Cores.TEXT_RESET);
            
            opcao = leia.nextInt();
-
+           
+           
            switch (opcao) {
                case 1:
                produto.listarProdutos();
@@ -63,20 +63,23 @@ public static Scanner leia = new Scanner(System.in);
             	   System.out.println("Digite o Id do Produto : ");
             	   int idProduto =leia.nextInt();
             	   produto.adicionarCarrinho(idProduto);
-                  
+                 
                    break;
                case 3:
+            	 produto.finalizarCompra();
                    
                    break;
                case 4:
-                   
-                   break;
-               case 5:
-                   System.out.println("Obrigado por visitar a Loja Eletrônica! Volte sempre.");
+            	System.out.println("Obrigado por visitar a Loja Eletrônica! Volte sempre.");
+                sobre();
+                leia.close();
+                System.exit(0);
                    break;
                default:
                    System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
                    break;
+                  
+                   
            }
        } while (opcao != 5);
    }
@@ -85,10 +88,10 @@ public static Scanner leia = new Scanner(System.in);
 
 
 	public static void sobre() {
-		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por: ");
-		System.out.println("Weslley Fellipe - Weslleyfellipe1@gmail.com");
-		System.out.println("https://github.com/weslleyfellipe");
+		System.out.println(Cores. TEXT_BLACK_BOLD+ Cores.ANSI_WHITE_BACKGROUND + "\n*********************************************************");
+		System.out.println("Projeto Desenvolvido por: Weslley Fellipe                ");
+		System.out.println("Email :  Weslleyfellipe1@gmail.com                       ");
+		System.out.println("https://github.com/weslleyfellipe                        ");
 		System.out.println("*********************************************************");
 
 	}
