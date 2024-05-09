@@ -1,6 +1,8 @@
 package ecommerce.entities;
 
-public class Produto {
+
+
+public abstract class Produto {
 
 	private int id;
 	private String nome;
@@ -53,7 +55,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return  id + " - " + nome + " | R$ : " + preco + " | Quantidades : " + quantidade ;
+		return   "\n" + id + " - " + nome + "  R$ : " + preco + " \n Quantidade em Estoque : " + quantidade ;
 		
 	}
 	
